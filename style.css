@@ -1,0 +1,180 @@
+body {
+    background-color: pink !important;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    background-color: rebeccapurple !important;
+    z-index: 100;
+}
+nav {
+    background: white;
+    display: flex;
+    flex-direction: row-reverse;
+    width: fit-content;
+}
+h1{
+    width: fit-content;
+    background-color: aqua;
+    position: relative;
+    text-align: center;
+    padding: 10%;
+}
+div {
+  background-color: transparent;
+}
+.main {
+    background: none;
+}
+.logo_helper {
+    display: flex;
+}
+
+.acces {
+    position: relative;
+    display: flex;
+    width: fit-content;
+    color: black;
+    left: 8%;
+    top: -100px;
+}
+#date {
+    position: relative;
+    text-align: center;
+    background-color: aquamarine;
+    margin: auto;
+    padding: 10%;
+    left: -50px;
+}
+
+#note { 
+    position: relative;
+    text-align: center;
+    background-color: antiquewhite;
+    margin: auto;
+    padding: 10%;
+    text-align: center;
+    left: -20px;
+    top: 80px;
+}
+#timer {
+    position: relative;
+    text-align: center;
+    background-color: aliceblue;
+    margin: auto;
+    padding: 10%;
+    text-align: center;
+    left: 10px;
+}
+
+#date:before {
+    content: " ";
+    width: 0; height: 0;
+    border-bottom: 30px solid aquamarine;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    position: absolute;
+    top: 50%;  
+    left: 62%;
+    transform: rotate(90deg);
+}
+#date:after {
+    content: "";
+    width: 0;
+    position: absolute;
+    left: -75px;
+    bottom: 0px;
+    border-top: 30px solid aquamarine;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    transform: rotate(90deg);
+}
+
+#note:before {
+    content: " ";
+    width: 0; height: 0;
+    border-bottom: 30px solid antiquewhite;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    position: absolute;
+    top: 30%;  
+    left: 50%;
+    transform: rotate(90deg);
+}
+#note:after {
+    content: "";
+    width: 0;
+    position: absolute;
+    left: -78%;
+    bottom: 30%;
+    border-top: 30px solid antiquewhite;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    transform: rotate(90deg);
+}
+
+#timer:before {
+    content: " ";
+    width: 0; height: 0;
+    border-bottom: 30px solid aliceblue;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    position: absolute;
+    top: 30%;  
+    left: 49%;
+    transform: rotate(90deg);
+}
+#timer:after {
+    content: "";
+    width: 0;
+    position: absolute;
+    left: -90%;
+    bottom: 30%;
+    border-top: 30px solid aliceblue;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    transform: rotate(90deg);
+}
+
+.temat {
+    position: relative;
+    background-color: aliceblue;
+    padding: 5%;
+    margin: 10%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+#temat {
+    position: relative;
+    justify-content: center;
+    margin: 100px;
+    text-align: justify;
+}
+#pic1 {
+    position: relative;
+
+}
+#kalendarium {
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    background: red;
+}
+#kalendarz {
+    position: relative;
+    background: whitesmoke;
+    width: 35%;
+    text-align: center;
+}
+#pic2 {
+    position: relative;
+    background: blueviolet;
+    width: 35%;
+}
+#FQA {
+    position: relative;
+    margin: 10%;
+}
