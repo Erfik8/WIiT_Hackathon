@@ -31,6 +31,11 @@ nav a, nav a:hover, nav a:visited
     text-decoration: none;
 }
 
+main
+{
+    height: calc(100vh - 40px);
+}
+
 
 h1{
     width: fit-content;
@@ -57,103 +62,109 @@ div {
     left: 8%;
     top: -100px;
 }
-#date {
-    position: relative;
+
+div.outerhexbox 
+{
+    align-items: center;
+    position: absolute;
+    top: 200px;  
     text-align: center;
     background-color: aquamarine;
-    margin: auto;
-    padding: 10%;
-    left: -50px;
+    width: 60px;
+    margin-left: 1px;
+    height: 104px;
+    z-index: -2;
 }
 
-#note { 
-    position: relative;
-    text-align: center;
-    background-color: antiquewhite;
-    margin: auto;
-    padding: 10%;
-    text-align: center;
-    left: -20px;
-    top: 80px;
-}
-#timer {
-    position: relative;
-    text-align: center;
-    background-color: aliceblue;
-    margin: auto;
-    padding: 10%;
-    text-align: center;
-    left: 10px;
-}
-
-#date:before {
+div.outerhexbox:before 
+{
     content: " ";
+    position: absolute;
+    top: 0px;
+    left: -32px;
+    border-right: 32px solid aquamarine;
+    border-top: 52px solid transparent;
+    border-bottom: 52px solid transparent;
     width: 0; height: 0;
-    border-bottom: 30px solid aquamarine;
-    border-left: 60px solid transparent;
-    border-right: 60px solid transparent;
-    position: absolute;
-    top: 50%;  
-    left: 62%;
-    transform: rotate(90deg);
-}
-#date:after {
-    content: "";
-    width: 0;
-    position: absolute;
-    left: -75px;
-    bottom: 0px;
-    border-top: 30px solid aquamarine;
-    border-left: 60px solid transparent;
-    border-right: 60px solid transparent;
-    transform: rotate(90deg);
+    z-index: -2;
 }
 
-#note:before {
+div.outerhexbox:after
+{
     content: " ";
+    position: absolute;
+    top: 0px;
+    left: 60px;
+    border-left: 32px solid aquamarine;
+    border-top: 52px solid transparent;
+    border-bottom: 52px solid transparent;
     width: 0; height: 0;
-    border-bottom: 30px solid antiquewhite;
-    border-left: 60px solid transparent;
-    border-right: 60px solid transparent;
-    position: absolute;
-    top: 30%;  
-    left: 50%;
-    transform: rotate(90deg);
-}
-#note:after {
-    content: "";
-    width: 0;
-    position: absolute;
-    left: -78%;
-    bottom: 30%;
-    border-top: 30px solid antiquewhite;
-    border-left: 60px solid transparent;
-    border-right: 60px solid transparent;
-    transform: rotate(90deg);
+    z-index: -2;
 }
 
-#timer:before {
+div.innerhexbox
+{
+    float: left;
+    text-align: center;
+    background-color: black;
+    width: 56px;
+    height: 96px;
+    margin-left: 2px;
+    margin-top: 4px;
+    border-radius: 2px;
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+
+}
+div.innerhexbox:before
+{
     content: " ";
+    border-top: 29px solid black;
+    border-left: 48.1px solid transparent;
+    border-right: 48.1px solid transparent;
     width: 0; height: 0;
-    border-bottom: 30px solid aliceblue;
-    border-left: 60px solid transparent;
-    border-right: 60px solid transparent;
     position: absolute;
-    top: 30%;  
-    left: 49%;
+    top: 37px;
+    left: -60px;
     transform: rotate(90deg);
+    z-index: -1;
 }
-#timer:after {
-    content: "";
-    width: 0;
+div.innerhexbox:after
+{
+    content: " ";
+    border-bottom: 29px solid black;
+    border-left: 48.1px solid transparent;
+    border-right: 48.1px solid transparent;
+    width: 0; height: 0;
     position: absolute;
-    left: -90%;
-    bottom: 30%;
-    border-top: 30px solid aliceblue;
-    border-left: 60px solid transparent;
-    border-right: 60px solid transparent;
+    top: 37px;
+    left: 24px;
     transform: rotate(90deg);
+    z-index: -1;
 }
+#data {
+    left: 100px;
+}
+#zapis{ 
+    left: 300px;
+}
+#odliczanie {
+    left: 500px;
+}
+
+div.outerhexbox:hover
+{
+    background-color: white;
+}
+div.outerhexbox:hover div.outerhexbox:before 
+{
+    background-color: white;
+}
+div.outerhexbox:hover div.outerhexbox:after
+{
+    background-color: white;
+}
+
 
 .temat {
     position: relative;
