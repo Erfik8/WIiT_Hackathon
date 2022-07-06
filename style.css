@@ -1,5 +1,7 @@
 body {
     background-color: #454545 !important;
+    position: relative;
+    overflow-x: hidden;
 }
 
 header {
@@ -165,6 +167,102 @@ div.outerhexbox:hover div.outerhexbox:after
     background-color: white;
 }
 
+div.banner_outer, div.banner_inner
+{
+    position: relative;
+    width: 0px;
+    height: 50px;
+    margin: auto;
+    background-color: black;
+}
+div.banner_title_outer
+{
+    position: absolute;
+    width: 220px;
+    height: 60px;
+    background-color: aquamarine;
+    margin-left: calc(50% - 110px);
+    margin-top: 24px;
+}
+div.banner_title_inner
+{
+    position: absolute;
+    width: 212px;
+    height: 57px;
+    background-color: black;
+    margin-left: 4px;
+    margin-top: 3px;
+}
+div.banner_outer:after 
+{
+    content: " ";
+    position: absolute;
+    width: 1400px;
+    top: 0px;
+    left: -700px;
+    border-top: 109px solid aquamarine;
+    border-left: 700px solid transparent;
+    border-right: 700px solid transparent;
+    margin: 0px;
+    z-index: -2;
+}
+div.banner_inner:after 
+{
+    content: " ";
+    position: absolute;
+    width: 1400px;
+    top: -5px;
+    left: -700px;
+    border-top: 109px solid black;
+    border-left: 700px solid transparent;
+    border-right: 700px solid transparent;
+    margin: 0px;
+    z-index: -1;
+}
+div.banner_title_outer:before
+{
+    content: " ";
+    position: absolute;
+    top: 0px;
+    left: -30px;
+    border-top: 60px solid transparent;
+    border-right: 30px solid aquamarine;
+    margin: 0px;
+}
+div.banner_title_outer:after
+{
+    content: " ";
+    position: absolute;
+    top: 0px;
+    border-top: 60px solid transparent;
+    border-left: 30px solid aquamarine;
+    left: 220px;
+    margin: 0px;
+}
+div.banner_title_inner:before
+{
+    content: " ";
+    position: absolute;
+    top: 0px;
+    left: -29px;
+    border-top: 56px solid transparent;
+    border-right: 29px solid black;
+    border-bottom: 4px solid transparent;
+    margin: 0px;
+    z-index: 1;
+}
+div.banner_title_inner:after
+{
+    content: " ";
+    position: absolute;
+    top: 0px;
+    left: 212px;
+    border-top: 56px solid transparent;
+    border-left: 29px solid black;
+    border-bottom: 4px solid transparent;
+    margin: 0px;
+    z-index: 1;
+}
 
 .temat {
     position: relative;
@@ -181,10 +279,7 @@ div.outerhexbox:hover div.outerhexbox:after
     margin: 100px;
     text-align: justify;
 }
-#pic1 {
-    position: relative;
 
-}
 #kalendarium {
     position: relative; 
     display: flex;
