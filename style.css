@@ -264,6 +264,79 @@ div.banner_title_inner:after
     z-index: 1;
 }
 
+div.partners
+{
+    position: relative;
+    margin-top: 170px;
+    height: 300px;
+}
+
+
+/*
+## Carousel formating
+*/
+.carousel
+{
+    height: 200px;
+}
+.carousel-inner .carousel-item .outerhexbox
+{
+    position: relative;
+    top: 0px;
+}
+.carousel-control-next, .carousel-control-prev
+{
+    width: 5% !important;
+}
+
+
+@media (max-width: 767px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* medium and up screens */
+@media (min-width: 768px) {
+    
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next{
+      transform: translateX(25%) !important;
+    }
+    
+    .carousel-inner .carousel-item-start.active, 
+    .carousel-inner .carousel-item-prev{
+      transform: translateX(-25%) !important;
+    }
+
+
+
+}
+
+.carousel-inner .carousel-item-end.carousel-item-prev,
+.carousel-inner .carousel-item-start.carousel-item-next { 
+  transform: translateX(0) !important;
+}
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start { 
+  transform: translateX(0);
+}
+
+/*
+## end carousel formating
+*/
+
+
 .temat {
     position: relative;
     background-color: aliceblue;
