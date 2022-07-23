@@ -1,5 +1,10 @@
 :root
 {
+    --main_color: aquamarine;
+    --background_color_1: black;
+    --background_color_2: grey;
+    --text_color_1: white;
+    --text_color_2: aquamarine;
     --hexagon_big: 65px;
     --hexagon_normal: 50px;
     --hexagon_small: 40px;
@@ -20,9 +25,76 @@
 }
 
 body {
-    background-color: black !important;
+    background-color: var(--background_color_1) !important;
     position: relative;
     overflow-x: hidden;
+}
+
+.backgroundvideo
+{
+    position: absolute;
+    align-self: center;
+    top: 0px;
+    width: 100%;
+    z-index: -3;
+}
+div.TitleBoxOuter
+{
+    position: absolute;
+    width: 500px;
+    height: 248px;
+    background-color: var(--main_color);
+    top: calc(30vh - 120px);
+    z-index: -2;
+}
+div.TitleBoxOuter::after
+{
+    content: " ";
+    position: absolute;
+    top: 0px;
+    left: 500px;
+    border-top: 248px solid var(--main_color);
+    border-right: 70px solid transparent;
+    z-index: -2;
+}
+div.TitleBoxInner
+{
+    position: absolute;
+    width: 497px;
+    height: 240px;
+    background-color: var(--background_color_1);
+    top: 4px;
+    z-index: -1;
+}
+div.TitleBoxInner::after
+{
+    content: " ";
+    position: absolute;
+    top: 0px;
+    left: 497px;
+    border-top: 240px solid var(--background_color_1);
+    border-right: 68px solid transparent;
+    z-index: -1;
+}
+
+
+h1.title 
+{
+    font-family: 'Rajdhani';
+    font-weight: 700;
+    font-size: 70px;
+    letter-spacing: 3px;
+    color: var(--text_color_2);
+    padding-top: 25px;
+    padding-left: 70px;
+    margin: 0px auto;
+}
+span.description
+{
+    color: var(--text_color_1);
+    display: inline-block;
+    margin-left: 20px;
+    text-align: justify;
 }
 
 header {
@@ -33,7 +105,7 @@ header {
     height: 40px;
     justify-content: space-between;
     z-index: 100;
-    background-color: black;
+    background-color: var(--background_color_1);
 }
 nav
 {
@@ -50,30 +122,23 @@ nav.links {
 }
 nav a, nav a:hover, nav a:visited
 {
-    color: white;
+    color: var(--text_color_1);
     text-decoration: none;
 }
 
 main
 {
+    position: relative;
     height: calc(100vh - 40px);
 }
 
-
-h1{
-    width: fit-content;
-    background-color: #aeebd7;
-    position: relative;
-    text-align: center;
-    padding: 10%;
-}
 div {
   background-color: transparent;
 }
 .acces {
-    position: relative;
-    display: flex;
-    color: white;
+    position: absolute;
+    color: var(--text_color_1);
+    top: calc(52vh);
 }
 div.outerhexbox
 {
@@ -94,7 +159,7 @@ div.outerhexbox
     position: absolute;
     top: 200px;  
     text-align: center;
-    background-color: aquamarine;
+    background-color: var(--main_color);
     width: var(--hexboxsize);
     margin-left: 1px;
     height: calc(var(--hexboxsize)*1.7320508075688772935274463415059);
@@ -106,7 +171,7 @@ div.outerhexbox:before
     position: absolute;
     top: 0px;
     left: calc(-1* var(--hexboxsize)/2 - 2px);
-    border-right: calc(var(--hexboxsize)/2 + 2px) solid aquamarine;
+    border-right: calc(var(--hexboxsize)/2 + 2px) solid var(--main_color);
     border-top: calc((var(--hexboxsize)*1.7320508075688772935274463415059)/2) solid transparent;
     border-bottom: calc((var(--hexboxsize)*1.7320508075688772935274463415059)/2) solid transparent;
     width: 0; height: 0;
@@ -118,7 +183,7 @@ div.outerhexbox:after
     position: absolute;
     top: 0px;
     left: var(--hexboxsize);
-    border-left: calc(var(--hexboxsize)/2 + 2px) solid aquamarine;
+    border-left: calc(var(--hexboxsize)/2 + 2px) solid var(--main_color);
     border-top: calc((var(--hexboxsize)*1.7320508075688772935274463415059)/2) solid transparent;
     border-bottom: calc((var(--hexboxsize)*1.73205080756887729352744634150599)/2) solid transparent;
     width: 0; height: 0;
@@ -126,9 +191,12 @@ div.outerhexbox:after
 }
 div.innerhexbox
 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     text-align: center;
-    background-color: black;
+    background-color: var(--background_color_1);
     width: calc(var(--hexboxsize) - 4px);
     height: calc(var(--hexboxsize)*1.7320508075688772935274463415059 - 8px);
     margin-left: 2px;
@@ -141,7 +209,7 @@ div.innerhexbox:before
     position: absolute;
     top: 0px;
     left: calc(-1*(var(--hexboxsize) - 4px)/2 - 2px);
-    border-right: calc((var(--hexboxsize) - 4px)/2 + 2px) solid black;
+    border-right: calc((var(--hexboxsize) - 4px)/2 + 2px) solid var(--background_color_1);
     border-top: calc((var(--hexboxsize)*1.7320508075688772935274463415059 - 8px)/2) solid transparent;
     border-bottom: calc((var(--hexboxsize)*1.7320508075688772935274463415059 - 8px)/2) solid transparent;
     width: 0; height: 0;
@@ -153,31 +221,31 @@ div.innerhexbox:after
     position: absolute;
     top: 0px;
     left: calc((var(--hexboxsize) - 4px));
-    border-left: calc((var(--hexboxsize) - 4px)/2 + 2px) solid black;
+    border-left: calc((var(--hexboxsize) - 4px)/2 + 2px) solid var(--background_color_1);
     border-top: calc((var(--hexboxsize)*1.7320508075688772935274463415059 - 8px)/2) solid transparent;
     border-bottom: calc((var(--hexboxsize)*1.7320508075688772935274463415059 - 8px)/2) solid transparent;
     width: 0; height: 0;
     z-index: -1;
+}
+div.innerhexbox > h6 
+{
+    position: absolute;
+    display: inline-block;
+    width: 100px;
 }
 #data {
     top: 0px;
     left: 120px;
 }
 #zapis{ 
-    top: 50px;
-    left: 200px;
+    top: 65px;
+    left: 225px;
 }
 #odliczanie {
     top: 0px;
-    left: 280px;
+    left: 330px;
 }
 
-div.outerhexbox:hover, 
-div.outerhexbox:hover div.outerhexbox:before,
-div.outerhexbox:hover div.outerhexbox:after
-{
-    background-color: white;
-}
 
 div.banner_outer, div.banner_inner
 {
@@ -185,7 +253,7 @@ div.banner_outer, div.banner_inner
     width: 0px;
     height: 50px;
     margin: auto;
-    background-color: black;
+    background-color: var(--background_color_1);
 }
 div.banner_outer
 {
@@ -196,7 +264,7 @@ div.banner_title_outer
     position: absolute;
     width: 220px;
     height: 60px;
-    background-color: aquamarine;
+    background-color: var(--main_color);
     margin-left: calc(50% - 110px);
     margin-top: 28px;
 }
@@ -205,7 +273,7 @@ div.banner_title_inner
     position: absolute;
     width: 212px;
     height: 57px;
-    background-color: black;
+    background-color: var(--background_color_1);
     margin-left: 4px;
     margin-top: 3px;
 }
@@ -216,7 +284,7 @@ div.banner_outer:after
     width: 1800px;
     top: 0px;
     left: -900px;
-    border-top: 109px solid aquamarine;
+    border-top: 109px solid var(--main_color);
     border-left: 900px solid transparent;
     border-right: 900px solid transparent;
     margin: 0px;
@@ -229,7 +297,7 @@ div.banner_inner:after
     width: 1800px;
     top: -5px;
     left: -900px;
-    border-top: 109px solid black;
+    border-top: 109px solid var(--background_color_1);
     border-left: 900px solid transparent;
     border-right: 900px solid transparent;
     margin: 0px;
@@ -242,7 +310,7 @@ div.banner_title_outer:before
     top: 0px;
     left: -30px;
     border-top: 60px solid transparent;
-    border-right: 30px solid aquamarine;
+    border-right: 30px solid var(--main_color);
     margin: 0px;
 }
 div.banner_title_outer:after
@@ -251,7 +319,7 @@ div.banner_title_outer:after
     position: absolute;
     top: 0px;
     border-top: 60px solid transparent;
-    border-left: 30px solid aquamarine;
+    border-left: 30px solid var(--main_color);
     left: 220px;
     margin: 0px;
 }
@@ -262,7 +330,7 @@ div.banner_title_inner:before
     top: 0px;
     left: -29px;
     border-top: 56px solid transparent;
-    border-right: 29px solid black;
+    border-right: 29px solid var(--background_color_1);
     border-bottom: 4px solid transparent;
     margin: 0px;
     z-index: 1;
@@ -274,7 +342,7 @@ div.banner_title_inner:after
     top: 0px;
     left: 212px;
     border-top: 56px solid transparent;
-    border-left: 29px solid black;
+    border-left: 29px solid var(--background_color_1);
     border-bottom: 4px solid transparent;
     margin: 0px;
     z-index: 1;
@@ -292,7 +360,7 @@ div.kalendarium
     margin-bottom: 100px;
     height: 400px;
     justify-content: space-around;
-    color: white;
+    color: var(--text_color_1);
     overflow-y: hidden;
 }
 div.kalendarium > div 
@@ -310,8 +378,8 @@ div.kalendarium > div > div.scroller
     position: inherit;
     display: flex;
     margin: auto;
-    border-left: solid 4px aquamarine;
-    border-right: solid 4px aquamarine;
+    border-left: solid 4px var(--main_color);
+    border-right: solid 4px var(--main_color);
     height: 100%;
     width: calc(100% - 10px);
     align-items: center;
@@ -337,7 +405,7 @@ div.ScrollElement > div.Content
     width: calc(100% - var(--hexagon_small)*1.5 - 1px);
     margin: 0px 0px 0px auto;
     height: 100%;
-    background-color: aquamarine;
+    background-color: var(--main_color);
     z-index: -1;
 }
 div.ScrollElement > div.Content:before
@@ -347,7 +415,7 @@ div.ScrollElement > div.Content:before
     top: 0px;
     left: calc(-1*var(--hexagon_small)/2 - 2px);
     height: inherit;
-    border-right: calc(var(--hexagon_small)/2 + 2px) solid aquamarine;
+    border-right: calc(var(--hexagon_small)/2 + 2px) solid var(--main_color);
     border-top: calc((var(--hexagon_small)*1.7320508075688772935274463415059)/2) solid transparent;
     border-bottom: calc((var(--hexagon_small)*1.7320508075688772935274463415059)/2) solid transparent;
     z-index: 2;
@@ -418,7 +486,7 @@ div.ScrollElement > div.Content:before
 */
 .temat {
     position: relative;
-    background-color: #aeebd7;
+    background-color: var(--main_color);
     padding: 5%;
     margin: 10%;
     height: 50%;
@@ -429,18 +497,18 @@ div.ScrollElement > div.Content:before
 .fqa{
     position: relative;
     margin: 10%;
-    background: #aeebd7;
+    background: var(--main_color);
     padding: 5%;
 }
 #gold_partner, #silver_partner, #brown_partner{
     position: relative;
-    background-color: #aeebd7;
+    background-color: var(--main_color);
     display: flex;
     text-align: justify;
 }
 .logo_partners{
     position: relative;
-    background-color: #454545;
+    background-color: var(--background_color_2);
     width: 50%;
 
     align-content: center;
@@ -454,7 +522,7 @@ div.ScrollElement > div.Content:before
 }
 #media_partners, #event_partners {
     position: relative;
-    background-color: aquamarine;
+    background-color: var(--main_color);
     text-align: center;
     padding-top: 1%;
 }
