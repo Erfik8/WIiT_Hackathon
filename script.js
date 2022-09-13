@@ -8,7 +8,7 @@ let FqaElements = document.querySelectorAll('.FqaQuestionConteiner');
 var checkedElement = null;
 
 FqaElements.forEach((el) => {
-    el.getElementsByTagName('h4')[0].addEventListener('click',function(){
+    el.getElementsByTagName('h5')[0].addEventListener('click',function(){
         if(checkedElement != null) checkedElement.id = "";
         this.id = "checked";
         checkedElement = this;

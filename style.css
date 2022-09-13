@@ -1,10 +1,10 @@
 :root
 {
-    --main_color: #08ff62;
+    --main_color: #1eca94;
     --background_color_1: black;
     --background_color_2: #262626;
     --text_color_1: white;
-    --text_color_2: #08ff62;
+    --text_color_2: #1eca94;
     --hexagon_bigger: 90px;
     --hexagon_big: 65px;
     --hexagon_normal: 50px;
@@ -15,42 +15,50 @@
     --hexagon_silver_border: #dedede;
     --hexagon_brown_border: #ab6100;
 }
-.hexsizebigger
-{
-    --hexboxsize: var(--hexagon_bigger) !important;
-}
-.hexsizebig
-{
-    --hexboxsize: var(--hexagon_big) !important;
-}
-
-.hexsizesmall
-{
-    --hexboxsize: var(--hexagon_small) !important;
-}
-.hexsizesmaller
-{
-    --hexboxsize: var(--hexagon_smaller) !important;
-}
+.hexsizebigger{--hexboxsize: var(--hexagon_bigger) !important;}
+.hexsizebig{--hexboxsize: var(--hexagon_big) !important;}
+.hexsizesmall{--hexboxsize: var(--hexagon_small) !important;}
+.hexsizesmaller{--hexboxsize: var(--hexagon_smaller) !important;}
 
 body {
     background-color: var(--background_color_2) !important;
     position: relative;
     overflow-x: hidden;
+    margin: 0px;
+    padding: 0px;
 }
+body *
+{
+    position: relative;
+}
+h1,h2,h3,h4,h5,h6
+{
+    font-family: 'Rajdhani' !important;
+    font-weight: 700 !important;
+    margin: 0px auto !important;
+    text-align: center !important;
+}
+h1,h2,h3{letter-spacing: 2px !important;}
+h4,h5,h6{letter-spacing: 1px !important;}
+h1{font-size: 70px !important;}
+h2{font-size: 60px !important;}
+h3{font-size: 45px !important;}
+h4{font-size: 35px !important;}
+h5{font-size: 25px !important;}
+h6{font-size: 15px !important;}
 
 .backgroundvideo
 {
     position: absolute;
     top: 0px;
-    min-width: 1280px;
+    min-width: 1440px;
     width: 100%;
     z-index: -3;
 }
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1440px) {
     .backgroundvideo
     {
-        left: calc((100vw - 1280px)/2);
+        left: calc((100vw - 1440px)/2);
     }
 }
 div.TitleBoxOuter
@@ -93,15 +101,8 @@ div.TitleBoxInner::after
 }
 h1.title 
 {
-    font-family: 'Rajdhani';
-    font-weight: 700;
-    font-size: 70px;
-    letter-spacing: 3px;
     color: var(--text_color_2);
     padding-top: 25px;
-    padding-left: 70px;
-    margin: 0px auto;
-    width: 100%;
 }
 span.description
 {
@@ -110,7 +111,6 @@ span.description
     text-align: justify;
     margin: auto 0px auto 20px
 }
-
 header {
     position: sticky;
     display: flex;
@@ -119,11 +119,11 @@ header {
     height: 40px;
     justify-content: space-between;
     z-index: 100;
-    background-color: var(--background_color_2);
+    background-color: var(--background_color_1);
+    border-bottom: solid 4px var(--main_color);
 }
 nav
 {
-    position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -137,80 +137,32 @@ nav.links {
 }
 nav div.NavElement
 {
-    position: relative;
     height: 100%;
     width: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: 0.4s;
-    background-color: var(--background_color_2)
+    background-color: inherit;
 }
-nav div.NavElement:hover
-{
-    background-color: aquamarine;
-    cursor: pointer;
-    color: black;
-}
-nav div.NavElement:hover::before
-{
-    border-left: solid 20px aquamarine;
-    cursor: pointer;
-    color: black
-}
-nav div.NavElement:hover::after
-{
-    border-right: solid 20px aquamarine;
-    cursor: pointer;
-    color: black;
-}
-nav div.NavElement::before
-{
-    content: "";
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    top: 0px;
-    left: 70px;
-    transition: 0.4s;
-    border-left: solid 20px var(--background_color_2);
-    border-bottom: solid 40px transparent;
-}
-nav div.NavElement::after
-{
-    content: "";
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    top: 0px;
-    left: -20px;
-    transition: 0.4s;
-    border-right: solid 20px var(--background_color_2);
-    border-bottom: solid 40px transparent;
-}
-
 nav a, nav a:hover, nav a:visited
 {
+    position: initial;
     color: var(--text_color_1);
     text-decoration: none;
-    transition: 0.6s;
+    transition: 0.2s;
 }
 nav div.NavElement:hover a, nav div.NavElement:hover a:hover, nav div.NavElement:hover a:visited
 {
-    color: black;
+    color: var(--text_color_2);
     text-decoration: none;
 }
-
 main
 {
-    position: relative;
-    height: calc(100vh - 40px);
+    height: calc(120vh);
 }
 
-div {
-  background-color: transparent;
-}
-.acces {
+div.acces {
     position: absolute;
     color: var(--text_color_1);
     top: calc(52vh);
@@ -244,22 +196,22 @@ div.HexBoxContener
 }
 div.HexboxWrapper
 {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 290px;
 } 
 div.HexboxWrapper.Gold 
 {
     background-color: var(--background_color_2);
     background-image: radial-gradient(circle at 50% 50%, #bfa358 40px, #735e27 80px, var(--background_color_2) 150px) ;
+    height: 290px;
 }
 div.HexboxWrapper.Silver 
 {
     background-color: var(--background_color_2);
     background-image: radial-gradient(circle at 50% 50%, #bdbdbd 30px, #6e6e6e 60px, var(--background_color_2) 100px);
+    height: 240px;
 }
 div#GoldLogo.outerhexbox,div#SilverLogo.outerhexbox,div#BrownLogo.outerhexbox
 {
@@ -304,7 +256,6 @@ div.innerhexbox
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     text-align: center;
     background-color: var(--background_color_1);
     width: calc(var(--hexboxsize) - 4px);
@@ -350,21 +301,8 @@ div.innerhexbox > h6
 }
 #logo
 {
-    top: -28px;
+    top: -40px;
     left: 12px;
-    transition: 0.4s;
-}
-#logo img 
-{
-    transition: 0.4s;
-}
-#logo:hover
-{
-    transform: rotate(32deg);
-}
-#logo:hover img 
-{
-    transform: rotate(-32deg);
 }
 #data {
     top: 0px;
@@ -378,11 +316,8 @@ div.innerhexbox > h6
     top: 0px;
     left: 330px;
 }
-
-
 div.banner_outer, div.banner_inner
 {
-    position: relative;
     width: 0px;
     height: 50px;
     margin: auto;
@@ -392,16 +327,17 @@ div.banner_outer, div.banner_inner
 }
 div.banner_outer
 {
-    margin-bottom: 120px;
+    height: 150px;
+    background-color: var(--background_color_2);
 }
 div.banner_title_outer
 {
     position: absolute;
     width: 300px;
-    height: 70px;
+    height: 78px;
     background-color: var(--main_color);
     margin-left: calc(50% - 150px);
-    margin-top: 13px;
+    margin-top: 5px;
 }
 div.banner_title_inner
 {
@@ -410,7 +346,7 @@ div.banner_title_inner
     align-items: center;
     position: absolute;
     width: 292px;
-    height: 67px;
+    height: 75px;
     background-color: var(--background_color_1);
     margin-left: 4px;
     margin-top: 3px;
@@ -447,7 +383,7 @@ div.banner_title_outer:before
     position: absolute;
     top: 0px;
     left: -30px;
-    border-top: 70px solid transparent;
+    border-top: 78px solid transparent;
     border-right: 30px solid var(--main_color);
     margin: 0px;
 }
@@ -456,7 +392,7 @@ div.banner_title_outer:after
     content: " ";
     position: absolute;
     top: 0px;
-    border-top: 70px solid transparent;
+    border-top: 78px solid transparent;
     border-left: 30px solid var(--main_color);
     left: 300px;
     margin: 0px;
@@ -467,7 +403,7 @@ div.banner_title_inner:before
     position: absolute;
     top: 0px;
     left: -29px;
-    border-top: 66px solid transparent;
+    border-top: 74px solid transparent;
     border-right: 29px solid var(--background_color_1);
     border-bottom: 4px solid transparent;
     margin: 0px;
@@ -479,7 +415,7 @@ div.banner_title_inner:after
     position: absolute;
     top: 0px;
     left: 292px;
-    border-top: 66px solid transparent;
+    border-top: 74px solid transparent;
     border-left: 29px solid var(--background_color_1);
     border-bottom: 4px solid transparent;
     margin: 0px;
@@ -487,26 +423,13 @@ div.banner_title_inner:after
 }
 div.banner_title_inner > h3
 {
-    font-family: 'Rajdhani';
-    font-size: 50px;
-    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 45px;
     color: white;
-    margin: 10px 0px 0px 0px;
     z-index: 3;
-}
-div.banner_outer span.Id_Handler
-{
-    position: absolute;
-    top: -60px;
-    margin: 0px;
-}
-div.partners
-{
-    position: relative;
 }
 div.kalendarium
 {
-    position: relative;
     display: flex;
     width: 90%;
     margin: auto;
@@ -520,19 +443,13 @@ div.kalendarium > div
 {
     width: 50%;
 }
-div.kalendarium > div > h3
-{
-    text-align: center;
-    padding: 3px 0px;
-    letter-spacing: 2px;
-}
 div.kalendarium > div > div.scroller
 {
     position: inherit;
     display: flex;
     margin: auto;
-    border-left: solid 4px var(--main_color);
-    border-right: solid 4px var(--main_color);
+    border-left: solid 2px var(--main_color);
+    border-right: solid 2px var(--main_color);
     height: 100%;
     width: calc(100% - 10px);
     align-items: center;
@@ -544,10 +461,6 @@ div.ScrollElement
     margin: 7px auto;
     height: calc(var(--hexagon_small)*1.7320508075688772935274463415059);
 }
-div.ScrollElement > div.HexboxTitle
-{
-    position: relative;
-}
 div.ScrollElement > div.HexboxTitle > div.outerhexbox
 {
     position: absolute;
@@ -555,7 +468,6 @@ div.ScrollElement > div.HexboxTitle > div.outerhexbox
 }
 div.ScrollElement > div.Content
 {
-    position: relative;
     width: calc(100% - var(--hexagon_small)*1.5 - 1px);
     margin: 0px 0px 0px auto;
     height: 100%;
@@ -584,7 +496,6 @@ div.partners .carousel
 }
 div.partners .carousel-inner .carousel-item .outerhexbox
 {
-    position: relative;
     top: 0px;
 }
 div.partners .carousel-control-next,div.partners .carousel-control-prev
@@ -648,57 +559,31 @@ div.partners .carousel-inner .carousel-item-start {
     justify-content: space-around;
 }
 
-.fqa{
-    position: relative;
-    margin: 10%;
-    background: var(--main_color);
-    padding: 5%;
-}
 div.partners > div.PartnerBanner{
-    position: relative;
     display: flex;
     text-align: justify;
 }
 .logo_partners{
-    position: relative;
     width: 50%;
     align-content: center;
     text-align: center;
 }
-.logo_partners > h3
-{
-    font-family: 'Rajdhani';
-    letter-spacing: 3px;
-    font-weight: 600;
-    margin: 0px auto 25px auto;
-}
-.logo_partners > h3.Gold
+.logo_partners > h5.Gold
 {
     color: var(--hexagon_gold_border);
 }
-.logo_partners > h3.Silver
+.logo_partners > h5.Silver
 {
     color: var(--hexagon_silver_border);
 }
-.logo_partners > h3.Bronze
-{
-    color: var(--hexagon_brown_border);
-}
 .info_partners {
-    position: relative;
     width: 50%;
     background-color: var(--background_color_2);
 }
-.PartnersTitle{
-    font-family: 'Rajdhani';
+div.partners h4{
     color: var(--main_color);
-    font-weight: 600;
-    letter-spacing: 4px;
-    font-size: 40px;
-    text-align: center;
     padding: 10px 0px;
     width: 100%;
-    margin: 0px;
 }
 div.FqaContainer
 {
@@ -711,7 +596,7 @@ div.FqaQuestionConteiner
 {
     width: 80%;
 }
-h4.FqaQuestion
+h5.FqaQuestion
 {
     color: var(--main_color);
     display: flex;
@@ -719,29 +604,72 @@ h4.FqaQuestion
     padding-bottom: 4px;
     border-bottom: solid 2px var(--main_color);
 }
-h4.FqaQuestion:hover
-{
-    cursor: pointer;
-}
-h4.FqaQuestion span 
-{
-    transition: 0.2s;
-}
-h4.FqaQuestion#checked span
-{
-    transform: rotate(90deg);
-}
+h5.FqaQuestion:hover{cursor: pointer;}
+h5.FqaQuestion span {transition: 0.2s;}
+h5.FqaQuestion#checked span{transform: rotate(90deg);}
 span.FqaAnswear
 {
     display: inline-block;
     overflow-y: hidden;
-    position: relative;
     color: var(--text_color_1);
     max-height: 0px;
     transition: 1s;
 }
-h4.FqaQuestion#checked + span
+h5.FqaQuestion#checked + span
 {
     max-height: 300px;
 }
+footer 
+{
+    background-color: var(--main_color);
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px 40px;
+    height: 240px;
+}
+footer > div
+{
+    height: 100%;
+}
+footer > div.Contact
+{
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+}
+footer > div.Contact > h5 
+{
+    width: 100%;
+    padding: 10px 0px 0px 0px;
+}
+footer > div.Links
+{
+    width: 40%;
+}
+footer > div.Socials
+{
+    width: 25%;
+}
+footer > div#footer_decoration
+{
+    position: absolute;
+    top: -60px;
+    left: -66px;
+}
+footer > div#footer_decoration > *, footer > div#footer_decoration
+{
+    background-color: var(--background_color_2);
+    border-color: var(--background_color_2);
+}
+footer > div#footer_decoration::before, footer > div#footer_decoration::after,
+footer > div#footer_decoration > div.innerhexbox::before, footer > div#footer_decoration > div.innerhexbox::after
+{
+    border-right-color: var(--background_color_2);
+    border-left-color: var(--background_color_2);
+} 
 
