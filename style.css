@@ -5,6 +5,8 @@
     --background_color_2: #262626;
     --text_color_1: white;
     --text_color_2: #1eca94;
+    --text_color_3: black;
+    --deafult_font: 'Chakra Petch';
     --hexagon_bigger: 90px;
     --hexagon_big: 65px;
     --hexagon_normal: 50px;
@@ -30,22 +32,33 @@ body {
 body *
 {
     position: relative;
+    font-family: var(--deafult_font);
 }
 h1,h2,h3,h4,h5,h6
 {
-    font-family: 'Rajdhani' !important;
+    font-family: var(--deafult_font) !important;
     font-weight: 700 !important;
     margin: 0px auto !important;
     text-align: center !important;
 }
-h1,h2,h3{letter-spacing: 2px !important;}
-h4,h5,h6{letter-spacing: 1px !important;}
-h1{font-size: 70px !important;}
-h2{font-size: 60px !important;}
-h3{font-size: 45px !important;}
-h4{font-size: 35px !important;}
-h5{font-size: 25px !important;}
-h6{font-size: 15px !important;}
+h1{font-size: 60px !important;}
+h2{font-size: 50px !important;}
+h3{font-size: 40px !important;}
+h4{font-size: 30px !important;}
+h5{font-size: 20px !important;}
+h6{font-size: 12px !important;}
+
+span.fa 
+{
+    margin-left: 8px;
+    margin-right: 8px;
+    width: 20px;
+}
+p 
+{
+    width: 100% !important;
+    margin: 2px 0px !important;
+}
 
 .backgroundvideo
 {
@@ -117,7 +130,7 @@ header {
     top: 0px;
     width: 100%;
     height: 40px;
-    justify-content: space-between;
+    justify-content: flex-end;
     z-index: 100;
     background-color: var(--background_color_1);
     border-bottom: solid 4px var(--main_color);
@@ -193,6 +206,7 @@ div.HexBoxContener
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    height: 240px;
 }
 div.HexboxWrapper
 {
@@ -204,13 +218,13 @@ div.HexboxWrapper
 div.HexboxWrapper.Gold 
 {
     background-color: var(--background_color_2);
-    background-image: radial-gradient(circle at 50% 50%, #bfa358 40px, #735e27 80px, var(--background_color_2) 150px) ;
-    height: 290px;
+    background-image: radial-gradient(circle at 50% 50%, #bfa358 40px, #735e27 80px, var(--background_color_2) 130px) ;
+    height: 240px;
 }
 div.HexboxWrapper.Silver 
 {
     background-color: var(--background_color_2);
-    background-image: radial-gradient(circle at 50% 50%, #bdbdbd 30px, #6e6e6e 60px, var(--background_color_2) 100px);
+    background-image: radial-gradient(circle at 50% 50%, #bdbdbd 30px, #6e6e6e 60px, var(--background_color_2) 85px);
     height: 240px;
 }
 div#GoldLogo.outerhexbox,div#SilverLogo.outerhexbox,div#BrownLogo.outerhexbox
@@ -492,7 +506,7 @@ div.ScrollElement > div.Content:before
 */
 div.partners .carousel
 {
-    height: 160px;
+    height: 240px;
 }
 div.partners .carousel-inner .carousel-item .outerhexbox
 {
@@ -624,36 +638,82 @@ footer
     background-color: var(--main_color);
     display: flex;
     flex-flow: row;
+    flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;
-    padding: 0px 40px;
-    height: 240px;
+    align-items:flex-end;
+    height: 300px;
 }
 footer > div
 {
-    height: 100%;
+    height: 60%;
 }
-footer > div.Contact
+footer > div > h5
 {
-    width: 35%;
+    width: 100%;
+}
+footer > div.border-line
+{
+    height: 60%;
+    width: 2px;
+    background-color: var(--background_color_1);
+}
+footer > div.Partners
+{
+    width: 30%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: baseline;
 }
-footer > div.Contact > h5 
+footer > div.Partners > h5 
 {
     width: 100%;
     padding: 10px 0px 0px 0px;
 }
+footer > div.Contacts
+{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+footer > div.Contacts > button
+{
+    width: 200px;
+    padding: 4px;
+    margin: 10px auto 0px auto;
+    color: var(--text_color_1);
+    background-color: var(--background_color_2);
+    font-size: 14px;
+    border-radius: 20px;
+}
 footer > div.Links
 {
-    width: 40%;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-around;
 }
-footer > div.Socials
+footer > div.Links > div.Links_left, 
+footer > div.Links > div.Links_right
 {
-    width: 25%;
+    width: 50%;
+    height: 60%;
+}
+footer > div.Links a, 
+footer > div.Links a:visited,
+footer > div.Links a:active
+{
+    color: var(--text_color_3);
+    text-decoration: none !important;
+}
+footer > div.Links a:hover
+{
+    color: var(--text_color_1) !important;
 }
 footer > div#footer_decoration
 {
@@ -672,4 +732,31 @@ footer > div#footer_decoration > div.innerhexbox::before, footer > div#footer_de
     border-right-color: var(--background_color_2);
     border-left-color: var(--background_color_2);
 } 
+footer > div#footer_icon
+{
+    position: absolute;
+    top: calc(100% - 106px);
+    left: calc(100%);
+}
+footer > div#footer_icon > *, footer > div#footer_icon
+{
+    background-color: var(--background_color_2);
+    border-color: var(--background_color_2);
+}
+footer > div#footer_icon::before, footer > div#footer_icon::after,
+footer > div#footer_icon > div.innerhexbox::before, footer > div#footer_icon > div.innerhexbox::after
+{
+    border-right-color: var(--background_color_2);
+    border-left-color: var(--background_color_2);
+}
+footer > div.Copyright
+{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: var(--background_color_2);
+    color: var(--main_color);
+}
+
 
