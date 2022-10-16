@@ -42,3 +42,7 @@ eventitems.forEach((el) => {
         next = next.nextElementSibling
     }
 });
+
+
+
+/* */

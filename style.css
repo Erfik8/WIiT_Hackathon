@@ -674,11 +674,21 @@ footer > div.Partners > h5
 footer > div.Contacts
 {
     width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
+
+.map-href {
+    color: var(--bs-heading-color);
+    text-decoration: none;
+}
+.contacts-right-href {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-around;
+}
+
+
 footer > div.Contacts > button
 {
     width: 200px;
